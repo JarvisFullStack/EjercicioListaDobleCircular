@@ -39,11 +39,26 @@ class Controlador{
 				
 			}
 		}
+		
+		void listar(){
+			Nodo *aux = primero;
+			do{
+				cout<<"Nombre: "<<aux->nombre<<endl;
+				aux = aux->siguiente;
+			}while(aux!=primero);
+		}
+		void listarrev(){
+			Nodo *aux = ultimo;
+			do{
+				cout<<"Nombre: "<<aux->nombre<<endl;
+				aux = aux->anterior;
+			}while(aux!=ultimo);
+			
+		}
 };
 
 
 int main(){
-	
 	
 	return 0;
 }
