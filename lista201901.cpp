@@ -7,7 +7,7 @@ class Nodo{
 		Nodo *siguiente;
 		Nodo *anterior;
 		Nodo(){
-			nombre = NULL;
+			
 			siguiente = NULL;
 			anterior = NULL;
 		}
@@ -16,6 +16,28 @@ class Nodo{
 			this->nombre = nombre;
 			this->siguiente = NULL;
 			this->anterior = NULL;
+		}
+};
+
+class Controlador{
+	public:
+		Nodo *primero;
+		Nodo *ultimo;
+		Controlador(){
+			primero = NULL;
+			ultimo = NULL;
+		}
+		void agregar(Nodo *nuevo){
+			if(!primero){
+				primero = ultimo = nuevo;
+			}else{
+				nuevo->anterior = ultimo;
+				nuevo->siguiente = primero;
+				primero->anterior = nuevo;
+				ultimo->siguiente = nuevo;
+				ultimo = nuevo;
+				
+			}
 		}
 };
 
